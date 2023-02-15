@@ -1,5 +1,5 @@
 import { serve } from "inngest/express";
-import { inngest } from "../../../src/inngest/client";
+import { inngest } from "../../../../src/inngest/client";
 
 const handler = serve(inngest, []);
 
