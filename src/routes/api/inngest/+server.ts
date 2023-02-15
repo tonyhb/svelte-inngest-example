@@ -5,6 +5,7 @@ const handler = serve(inngest, []);
 
 export function load() {
   let arg;
+  console.log(arguments);
   try {
     arg = JSON.stringify(arguments);
   } catch(e) {
@@ -15,10 +16,12 @@ export function load() {
 
 
 export function PUT() {
+  console.log(arguments);
   return new Response(JSON.stringify({ body: "hi" }), {});
 }
 
 export function POST() {
+  console.log(arguments);
   return new Response(JSON.stringify({ body: "hi" }), {});
 }
 
