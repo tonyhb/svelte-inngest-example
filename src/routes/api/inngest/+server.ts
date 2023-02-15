@@ -1,4 +1,4 @@
-import { serve } from "inngest/next";
+import { serve } from "inngest/cloudflare";
 import { inngest } from "$lib/inngest/client";
 
 const handler = serve(inngest, []);
