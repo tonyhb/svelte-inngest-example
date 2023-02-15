@@ -9,7 +9,7 @@ export function GET({ request }) {
   // Log some defaults that Inngest uses to make sure request is well formed.
   // console.log(request?.headers['host'], request?.originalUrl);
 
-  return handler(request);
+  return handler({ request });
 }
 
 
@@ -17,7 +17,7 @@ export function PUT({ request }) {
   return handler({ request });
 }
 
-export function POST() {
+export function POST({ request }) {
   return handler({ request });
 }
 
