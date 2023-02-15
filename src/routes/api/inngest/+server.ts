@@ -7,6 +7,8 @@ import { serve } from "inngest/cloudflare";
 const handler = serve(inngest, []);
 
 const env = {
+  INNGEST_SIGNING_KEY: process.env.INNGEST_SIGNING_KEY,
+  INNGEST_EVENT_KEY: process.env.INNGEST_EVENT_KEY,
   ENVIRONMENT: "production", // change from production to anything in development.
 };
 
