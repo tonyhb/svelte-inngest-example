@@ -1,27 +1,25 @@
-import { serve } from "inngest/cloudflare";
 import { inngest } from "$lib/inngest/client";
+// Cloudflare uses JS standard library Request + Response objects for
+// managing the handler.  We import that here and invoke this.
+import { serve } from "inngest/cloudflare";
 
+// Create a new handler.
 const handler = serve(inngest, []);
 
+const env = {
+  ENVIRONMENT: "production", // change from production to anything in development.
+};
+
 export function GET({ request }) {
-  console.log(arguments, request);
-
-  // Log some defaults that Inngest uses to make sure request is well formed.
-  // console.log(request?.headers['host'], request?.originalUrl);
-  
-  const env = {};
-
+  // Wrap and call our handler.
   return handler({ request, env });
 }
 
 
 export function PUT({ request }) {
-  const env = {};
   return handler({ request, env });
 }
 
 export function POST({ request }) {
-  const env = {};
   return handler({ request, env });
 }
-
