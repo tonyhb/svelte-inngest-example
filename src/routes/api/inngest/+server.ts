@@ -8,16 +8,20 @@ export function GET({ request }) {
 
   // Log some defaults that Inngest uses to make sure request is well formed.
   // console.log(request?.headers['host'], request?.originalUrl);
+  
+  const env = {};
 
-  return handler({ request });
+  return handler({ request, env });
 }
 
 
 export function PUT({ request }) {
-  return handler({ request });
+  const env = {};
+  return handler({ request, env });
 }
 
 export function POST({ request }) {
-  return handler({ request });
+  const env = {};
+  return handler({ request, env });
 }
 
