@@ -1,4 +1,4 @@
-import { serve } from "inngest/express";
+import { serve } from "inngest/next";
 import { inngest } from "$lib/inngest/client";
 
 const handler = serve(inngest, []);
