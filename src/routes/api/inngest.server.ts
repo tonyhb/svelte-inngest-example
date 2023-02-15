@@ -9,20 +9,15 @@ export function load() {
     arg = JSON.stringify(arguments);
   } catch(e) {
   }
-  return {
-    body: arg,
-  };
+
+  return new Response(JSON.stringify({ arg }), {});
 }
 
 
 export function PUT() {
-  return {
-    location: '/items/123'
-  };
+  return new Response(JSON.stringify({ body: "hi" }), {});
 }
 
 export function POST() {
-  return {
-    location: '/items/123'
-  };
+  return new Response(JSON.stringify({ body: "hi" }), {});
 }
