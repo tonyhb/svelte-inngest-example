@@ -3,7 +3,7 @@ import { inngest } from "$lib/inngest/client";
 
 const handler = serve(inngest, []);
 
-export function load() {
+export function GET() {
   let arg;
   console.log(arguments);
   try {
