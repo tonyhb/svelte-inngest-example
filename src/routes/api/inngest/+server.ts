@@ -3,25 +3,21 @@ import { inngest } from "$lib/inngest/client";
 
 const handler = serve(inngest, []);
 
-export function GET() {
-  let arg;
-  console.log(arguments);
-  try {
-    arg = JSON.stringify(arguments);
-  } catch(e) {
-  }
+export function GET({ request }) {
+  console.log(arguments, request);
 
-  return new Response(JSON.stringify({ arg }), {});
+  // Log some defaults that Inngest uses to make sure request is well formed.
+  console.log(request?.get("host"), request?.headers['host'], request?.originalUrl);
+
+  return handler(request);
 }
 
 
-export function PUT() {
-  console.log(arguments);
-  return new Response(JSON.stringify({ body: "hi" }), {});
+export function PUT({ request }) {
+  return handler({ request });
 }
 
 export function POST() {
-  console.log(arguments);
-  return new Response(JSON.stringify({ body: "hi" }), {});
+  return handler({ request });
 }
 
