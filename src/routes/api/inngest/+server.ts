@@ -4,7 +4,10 @@ import { inngest } from "$lib/inngest/client";
 import { serve } from "inngest/cloudflare";
 
 // Create a new handler.
-const handler = serve(inngest, []);
+const handler = serve({
+    client: inngest,
+    functions: []
+});
 
 const env = {
   INNGEST_SIGNING_KEY: process.env.INNGEST_SIGNING_KEY,
